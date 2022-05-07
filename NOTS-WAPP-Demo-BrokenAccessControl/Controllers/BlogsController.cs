@@ -28,6 +28,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
             return View(await _context.Blog.ToListAsync());
         }
 
+        [Authorize]
         // GET: Blogs/Details/5
         public async Task<IActionResult> Details(int? id)
         {

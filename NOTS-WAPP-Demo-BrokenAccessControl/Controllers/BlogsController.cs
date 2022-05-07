@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -54,6 +55,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         // POST: Blogs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Body,Date")] Blog blog)
@@ -68,7 +70,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         }
 
         // GET: Blogs/Edit/5
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,6 +89,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         // POST: Blogs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,Date")] Blog blog)
@@ -120,6 +123,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         }
 
         // GET: Blogs/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

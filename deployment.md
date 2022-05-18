@@ -45,7 +45,23 @@ You can deploy to Azure directly from Visual Studio.
 
 ## Deploy to App Service without Visual Studio
 
-First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions.
+First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
+
+1. Run this command with your app name and the resource group that the app service is in.
+
+``az webapp deployment source config-local-git --name <your-app-name> --resource-group <resource-name>``
+
+2. Save these deployment credentials because you'll need them later
+
+``az webapp deployment list-publishing-credentials  --name <your-app-name> --resource-group <resource-name> --query "{Username:publishingUserName, Password:publishingPassword}"``
+
+3. Now add a new remote to the repository you want to publish
+
+``git remote add azure https://<your-app-name>.scm.azurewebsites.net/<your-app-name>.git``
+
+4. Push your code to Azure
+
+``git push azure main:master``
 
 ## Connect app to database
 
@@ -75,7 +91,7 @@ Now we need to generate the database schema for the app.
 
 5. Install dotnet-ef ``dotnet tool install -g dotnet-ef``
 6. Create a migration ``dotnet ef migrations add InitialCreate ``
-7. Then update the database ``dotnet ef database update --connection <connectionstring>`` and publish the app like before
+7. Then update the database ``dotnet ef database update --connection <connectionstring>`` and publish the app like before (using visual studio or pushing to git branch)
 
 You should now be able to visit your website!
 

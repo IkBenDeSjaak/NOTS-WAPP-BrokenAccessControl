@@ -50,7 +50,7 @@ First of all, install Azure CLI by following [these](https://docs.microsoft.com/
 ## Connect app to database
 
 1. Enter the name of your database (eg ``coreDb``) in the search field
-2. On the database overview page, click on ``Connection strings`` in the sidebar on the left. Save this connection string in eg notepad for now
+2. On the database overview page, click on ``Connection strings`` in the sidebar on the left. Save this connection string in eg notepad for now and edit it with your password
 3. Now search for the name of the app service (ex ``workshop-deployment``) and select ``Configuration`` in the sidebar
 4. Scroll down and select ``+ Create new connection string``
 5. Think of a name, enter the connection string from step 2 and select ``SQLserver`` as the type. Click on ``Ok`` and then on ``Save`` at the top of the page
@@ -75,7 +75,7 @@ Now we need to generate the database schema for the app.
 
 5. Install dotnet-ef ``dotnet tool install -g dotnet-ef``
 6. Create a migration ``dotnet ef migrations add InitialCreate ``
-7. Then update the database ``dotnet ef database update`` and publish the app like before
+7. Then update the database ``dotnet ef database update --connection <connectionstring>`` and publish the app like before
 
 You should now be able to visit your website!
 

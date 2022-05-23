@@ -1,6 +1,6 @@
 # Deployment on Azure
 
-Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform. We'll use the Azure CLI in order to not be tied to a specific IDE such as Visual Studio or Rider.
+Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.
 
 ## Create App Service
 

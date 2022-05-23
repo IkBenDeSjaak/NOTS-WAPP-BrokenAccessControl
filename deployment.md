@@ -13,7 +13,7 @@ First you need to create an app service, where your app will be hosted.
 	- **Resource group:** create new and give it a name (ex ``Workshop deployment``) so you can easily remove it later
 	- **Name:** choose a unique name for your app
 	- **Publish:** code
-	- **Runtime stack:** ``.Net Core 3.1 (LTS)``
+	- **Runtime stack:** ``.Net Core 6 (LTS)``
 	- **Operating system:** Windows
 	- **Region:** West Europe
 	- **App service plan:** Create a new windows plan and choose the ``Free F1`` Sku 

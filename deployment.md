@@ -2,7 +2,7 @@
 
 Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.
 
-## Create App Service
+## 1 Create App Service
 
 First you need to create an app service, where your app will be hosted.
 
@@ -13,13 +13,13 @@ First you need to create an app service, where your app will be hosted.
 	- **Resource group:** create new and give it a name (ex ``Workshop deployment``) so you can easily remove it later
 	- **Name:** choose a unique name for your app
 	- **Publish:** code
-	- **Runtime stack:** ``.Net Core 6 (LTS)``
+	- **Runtime stack:** ``.Net Core 3.1 (LTS)``
 	- **Operating system:** Windows
-	- **Region:** West Europe
+	- **Region:** West Europe (or any other region)
 	- **App service plan:** Create a new windows plan and choose the ``Free F1`` Sku 
 4. Press ``Review + create``, check that you have the correct settings and click create
 
-## Create a database
+## 2 Create a database
 
 The database needs to be created seperatly from the app service.
 
@@ -28,12 +28,13 @@ The database needs to be created seperatly from the app service.
 	- **Project details:** Choose the same subscription and resource group as the app service
 	- **Server details:** Enter a unique name for the database (ex ``coreDb``) and select West Europe as region
 	- **Authentication:** Select ``Use SQL authentication`` and create a username and password
+	- **Compute+storage**: Select Basic service tier and change max data size to 0,5 GB
 3. Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes``
 4. Wait until the database is deployed and click ``Go to resource``
 5. Now click on ``+ Create database`` and fille out the page as following:
 	- Choose a name and leave the rest as default
 
-## Deploy to App service with Visual Studio
+## 3a Deploy to App service with Visual Studio
 
 You can deploy to Azure directly from Visual Studio.
 
@@ -43,7 +44,9 @@ You can deploy to Azure directly from Visual Studio.
 4. Sign in with your Azure account
 5. Select the subscription and resource group where you deployed your App Service. Click Finish and on the next screen click Publish.
 
-## Deploy to App Service without Visual Studio
+ > Make sure you point to the correct url for API calls!
+
+## 3b Deploy to App Service without Visual Studio
 
 First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
 
@@ -63,7 +66,7 @@ First of all, install Azure CLI by following [these](https://docs.microsoft.com/
 
 ``git push azure main:master``
 
-## Connect app to database
+## 4 Connect app to database
 
 1. Enter the name of your database (eg ``coreDb``) in the search field
 2. On the database overview page, click on ``Connection strings`` in the sidebar on the left. Save this connection string in eg notepad for now and edit it with your password
@@ -88,6 +91,8 @@ Now we need to generate the database schema for the app.
         TrustServerCertificate=False;"
   }
   ```
+  
+  >  Alternatively you can upload a bacpac of your database, instead of creating a new database select "Import database", but you do need to create a storage group (this will be shown in the demo).
 
 5. Install dotnet-ef ``dotnet tool install -g dotnet-ef``
 6. Create a migration ``dotnet ef migrations add InitialCreate ``

@@ -19,7 +19,7 @@ First you need to create an app service, where your app will be hosted.
 	- **App service plan:** Create a new windows plan and choose the ``Free F1`` Sku 
 4. Press ``Review + create``, check that you have the correct settings and click create
 
-## 2 Create a database
+## 2 Create a database service
 
 The database needs to be created seperatly from the app service.
 
@@ -31,8 +31,26 @@ The database needs to be created seperatly from the app service.
 	- **Compute+storage**: Select Basic service tier and change max data size to 0,5 GB
 3. Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes``
 4. Wait until the database is deployed and click ``Go to resource``
-5. Now click on ``+ Create database`` and fille out the page as following:
+
+## 3 Create a database
+
+You can now create a new database or use a bacpac with data already filled out.
+
+### New database
+
+Create a new database by clicking on ``+ Create database`` and fill out the page as following:
 	- Choose a name and leave the rest as default
+	
+### Import bacpac
+
+1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Geo redundant storage"
+2. Create a new container for the bacpac file
+3. Press upload on the storage account overview screen and upload the bacpac
+4. Go to your database service and press ``Import database``
+5. Press ``Select backup``  and choose the storage account and container with the bacpack. Then select the bacpac
+6. Make sure to choose the Basic service tier with max data size of 0,5 GB
+
+The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime
 
 ## 3a Deploy to App service with Visual Studio
 
@@ -74,7 +92,7 @@ First of all, install Azure CLI by following [these](https://docs.microsoft.com/
 4. Scroll down and select ``+ Create new connection string``
 5. Think of a name, enter the connection string from step 2 and select ``SQLserver`` as the type. Click on ``Ok`` and then on ``Save`` at the top of the page
 
-Now we need to generate the database schema for the app.
+Now we need to setup the app and database to be able to be accessed from your computer.
 
 1. Search for the SQL server you created earlier and select it
 2. In the sidebar, select the ``Networking`` and then scroll down and click ``+ Add your client ipv4 address``
@@ -92,13 +110,24 @@ Now we need to generate the database schema for the app.
   }
   ```
   
-  >  Alternatively you can upload a bacpac of your database, instead of creating a new database select "Import database", but you do need to create a storage group (this will be shown in the demo).
+Now we need to generate the database schema for the app if you haven't used a bacpac.
 
 5. Install dotnet-ef ``dotnet tool install -g dotnet-ef``
 6. Create a migration ``dotnet ef migrations add InitialCreate ``
 7. Then update the database ``dotnet ef database update --connection <connectionstring>`` and publish the app like before (using visual studio or pushing to git branch)
 
 You should now be able to visit your website!
+
+## Errors
+
+Some solutions to errors that we came across:
+
+ - If you get an ``there was an error trying to log you in: 'cannot read properties of undefined (reading 'tolowercase')'`` then you need to update your packages, put the following code in the .csproject and delete the bin and obj folder
+```
+<ItemGroup>
+	<TrimmerRootAssembly Include="Microsoft.Authentication.WebAssembly.Msal" />
+</ItemGroup>
+```
 
 ## Sources
 

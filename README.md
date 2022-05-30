@@ -61,7 +61,7 @@ You can create a bacpac of your database, including all types using [this tutori
 5. Press ``Select backup``  and choose the storage account and container with the bacpack. Then select the bacpac
 6. Make sure to choose the Basic service tier with max data size of 0,5 GB
 
-The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime
+The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime. You can view the progress of the database import by going to the database and scrolling down to see the notifications. Press ``You have 1 ongoing operation``.
 
 ### 3a Deploy to App service with Visual Studio
 

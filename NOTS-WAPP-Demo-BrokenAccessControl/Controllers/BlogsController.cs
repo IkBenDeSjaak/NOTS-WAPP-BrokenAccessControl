@@ -51,7 +51,7 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         }
 
         // GET: Blogs/Edit/5
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

@@ -32,7 +32,7 @@ The database needs to be created seperatly from the app service.
 1. Search for **SQL Servers** and click on ```+ Create`` once you're on the SQL Database page
 2. Fill out the page as following:
 	- **Project details:** Choose the same subscription and resource group as the app service
-	- **Server details:** Enter a unique name for the database (ex ``coreDb``) and select West Europe as region
+	- **Server details:** Enter a unique name for the database server (ex ``workshop-deployment``) and select West Europe as region
 	- **Authentication:** Select ``Use SQL authentication`` and create a username and password
 	- **Compute+storage**: Select Basic service tier and change max data size to 0,5 GB
 3. Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes``

@@ -63,7 +63,7 @@ You can create a bacpac of your database, including all types by installing Azur
 
 The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime. You can view the progress of the database import by going to the database and scrolling down to see the notifications. Press ``You have 1 ongoing operation``.
 
-### 3a Deploy to App service with Visual Studio
+### 4a Deploy to App service with Visual Studio
 
 You can deploy to Azure directly from Visual Studio.
 
@@ -75,7 +75,7 @@ You can deploy to Azure directly from Visual Studio.
 
  > Make sure you point to the correct url for API calls!
 
-### 3b Deploy to App Service without Visual Studio
+### 4b Deploy to App Service without Visual Studio
 
 First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
 
@@ -95,7 +95,7 @@ First of all, install Azure CLI by following [these](https://docs.microsoft.com/
 
 ``git push azure main:master``
 
-### 4 Connect app to database
+### 5 Connect app to database
 
 1. Enter the name of your database (eg ``coreDb``) in the search field
 2. On the database overview page, click on ``Connection strings`` in the sidebar on the left. Save this connection string in eg notepad for now and edit it with your password
@@ -131,7 +131,7 @@ If you **did not import a bacpac** then we need to generate the database schema 
 
 You should now be able to visit your website!
 
-## Azure cache for Redis
+## 6 Azure cache for Redis
 
 Search for Azure cache for Redis and select create new database. Fill it out as following:
 

@@ -127,6 +127,8 @@ If you **did not import a bacpac** then we need to generate the database schema 
 6. Create a migration ``dotnet ef migrations add InitialCreate ``
 7. Then update the database ``dotnet ef database update --connection <connectionstring>`` and publish the app like before (using visual studio or pushing to git branch)
 
+ > Don't forget to update your redirect url in Azure AD to the domain.
+
 You should now be able to visit your website!
 
 ### Errors

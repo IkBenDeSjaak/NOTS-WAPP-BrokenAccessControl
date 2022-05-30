@@ -1,8 +1,8 @@
 # Nots WAPP Workshop
 
-## Nots Wapp broken access control
+## Broken Access Control
 
-You can see the demo of broken access control here.
+**Voor het deployen van je app op Azure lees je hieronder verder. Hiervoor gebruik je je eigen Inside Airbnb app.** De code in deze repository heb je niet nodig voor het deployen van je eigen Inside Airbnb app op Azure en werd slechts gebruikt voor de demo van Broken Access Control en kan je nog eens nakijken als je dat wil.
 
 ## Deployment on Azure
 

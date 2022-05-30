@@ -6,7 +6,7 @@ You can see the demo of broken access control here.
 
 ## Deployment on Azure
 
-Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.
+Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform. You can use your Airbnb app or [this demo](https://github.com/Azure-Samples/msdocs-app-service-sqldb-dotnetcore/archive/refs/heads/main.zip) from Microsoft.
 
 ### 1 Create App Service
 

@@ -54,7 +54,7 @@ You can create a bacpac of your database, including all types using [this tutori
 
 > If you've already created a database, remove it before importing the bacpac (this creates a new database)
 
-1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Geo redundant storage"
+1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Locally redundant storage"
 2. Create a new container for the bacpac file
 3. Press upload on the storage account overview screen and upload the bacpac
 4. Go to your database service and press ``Import database``
@@ -121,7 +121,7 @@ Now we need to setup the app and database to be able to be accessed from your co
   }
   ```
   
-Now we need to generate the database schema for the app if you haven't used a bacpac.
+If you **did not import a bacpac** then we need to generate the database schema for the app if you haven't used a bacpac.
 
 5. Install dotnet-ef ``dotnet tool install -g dotnet-ef``
 6. Create a migration ``dotnet ef migrations add InitialCreate ``
@@ -139,7 +139,8 @@ Some solutions to errors that we came across:
 	<TrimmerRootAssembly Include="Microsoft.Authentication.WebAssembly.Msal" />
 </ItemGroup>
 ```
+ - If the database doesn't seem to be working, make sure your bacpac is finished importing or you pushed the model to the database
 
-## Sources
+### Sources
 
 [Deploy an ASP.NET Core and Azure SQL Database app to Azure App Service - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/tutorial-dotnetcore-sqldb-app?tabs=azure-portal%2Cvisualstudio-deploy%2Cdeploy-instructions-azure-portal%2Cazure-portal-logs%2Cazure-portal-resources)

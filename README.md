@@ -1,3 +1,5 @@
+# Nots WAPP Workshop
+
 # Deployment on Azure
 
 Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.

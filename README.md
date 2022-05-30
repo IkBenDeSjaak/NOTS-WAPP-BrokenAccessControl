@@ -1,5 +1,9 @@
 # Nots WAPP Workshop
 
+## Nots Wapp broken access control
+
+You can see the demo of broken access control here.
+
 ## Deployment on Azure
 
 Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.

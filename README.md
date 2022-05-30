@@ -25,18 +25,15 @@ First you need to create an app service, where your app will be hosted.
 	- **App service plan:** Create a new windows plan and choose the ``Free F1`` Sku 
 4. Press ``Review + create``, check that you have the correct settings and click create
 
-### 2 Create a database service
+### 2 Create a database server
 
 The database needs to be created seperatly from the app service.
 
 1. Search for **SQL Servers** and click on ```+ Create`` once you're on the SQL Database page
 2. Fill out the page as following:
 	- **Project details:** Choose the same subscription and resource group as the app service
-	- **Server details:** Enter a unique name for the database server (ex ``workshop-deployment``) and select West Europe as region
+	- **Server details:** Enter a unique name for the database server (ex ``workshop-deployment``) and select West Europe as region (if possible)
 	- **Authentication:** Select ``Use SQL authentication`` and create a username and password
-	- **Compute+storage**: Select Basic service tier and change max data size to 0,5 GB
-3. Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes``
-4. Wait until the database is deployed and click ``Go to resource``
 
 ### 3 Create a database
 
@@ -45,7 +42,9 @@ You can now create a new database or use a bacpac with data already filled out.
 #### New database
 
 Create a new database by clicking on ``+ Create database`` and fill out the page as following:
-	- Choose a name and leave the rest as default
+ - **Database details**: Think of a name and for ``service and compute tier`` select Basic service tier and change max data size to 0,5 GB
+
+Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes`` and wait until the database is deployed and click ``Go to resource``
 	
 #### Import bacpac
 

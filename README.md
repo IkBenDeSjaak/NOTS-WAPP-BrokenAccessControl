@@ -63,7 +63,9 @@ You can create a bacpac of your database, including all types by installing Azur
 
 The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime. You can view the progress of the database import by going to the database and scrolling down to see the notifications. Press ``You have 1 ongoing operation``.
 
-### 4a Deploy to App service with Visual Studio
+### 4 Deploy to App Service
+
+#### 4a Deploy to App service with Visual Studio
 
 You can deploy to Azure directly from Visual Studio.
 
@@ -75,7 +77,7 @@ You can deploy to Azure directly from Visual Studio.
 
  > Make sure you point to the correct url for API calls!
 
-### 4b Deploy to App Service without Visual Studio
+#### 4b Deploy to App Service without Visual Studio
 
 First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
 

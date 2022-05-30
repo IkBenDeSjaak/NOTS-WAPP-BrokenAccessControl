@@ -1,10 +1,10 @@
 # Nots WAPP Workshop
 
-# Deployment on Azure
+## Deployment on Azure
 
 Follow the following steps to deploy your ASP.NET Core application with database to Microsoft Azure app platform.
 
-## 1 Create App Service
+### 1 Create App Service
 
 First you need to create an app service, where your app will be hosted.
 
@@ -21,7 +21,7 @@ First you need to create an app service, where your app will be hosted.
 	- **App service plan:** Create a new windows plan and choose the ``Free F1`` Sku 
 4. Press ``Review + create``, check that you have the correct settings and click create
 
-## 2 Create a database service
+### 2 Create a database service
 
 The database needs to be created seperatly from the app service.
 
@@ -34,16 +34,16 @@ The database needs to be created seperatly from the app service.
 3. Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes``
 4. Wait until the database is deployed and click ``Go to resource``
 
-## 3 Create a database
+### 3 Create a database
 
 You can now create a new database or use a bacpac with data already filled out.
 
-### New database
+#### New database
 
 Create a new database by clicking on ``+ Create database`` and fill out the page as following:
 	- Choose a name and leave the rest as default
 	
-### Import bacpac
+#### Import bacpac
 
 1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Geo redundant storage"
 2. Create a new container for the bacpac file
@@ -54,7 +54,7 @@ Create a new database by clicking on ``+ Create database`` and fill out the page
 
 The importing of the bacpac can easily take 10 minutes, so we'll do something else in the meantime
 
-## 3a Deploy to App service with Visual Studio
+### 3a Deploy to App service with Visual Studio
 
 You can deploy to Azure directly from Visual Studio.
 
@@ -66,7 +66,7 @@ You can deploy to Azure directly from Visual Studio.
 
  > Make sure you point to the correct url for API calls!
 
-## 3b Deploy to App Service without Visual Studio
+### 3b Deploy to App Service without Visual Studio
 
 First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
 
@@ -86,7 +86,7 @@ First of all, install Azure CLI by following [these](https://docs.microsoft.com/
 
 ``git push azure main:master``
 
-## 4 Connect app to database
+### 4 Connect app to database
 
 1. Enter the name of your database (eg ``coreDb``) in the search field
 2. On the database overview page, click on ``Connection strings`` in the sidebar on the left. Save this connection string in eg notepad for now and edit it with your password
@@ -120,7 +120,7 @@ Now we need to generate the database schema for the app if you haven't used a ba
 
 You should now be able to visit your website!
 
-## Errors
+### Errors
 
 Some solutions to errors that we came across:
 

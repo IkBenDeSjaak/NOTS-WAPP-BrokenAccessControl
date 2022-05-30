@@ -50,6 +50,8 @@ Go to the networking tab and make sure ``Allow Azure services and resources to a
 	
 #### 3b Import bacpac
 
+You can create a bacpac of your database, including all types using [this tutorial](https://www.sqlservercentral.com/articles/sql-server-dacpac-in-azure-data-studio).
+
 > If you've already created a database, remove it before importing the bacpac (this creates a new database)
 
 1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Geo redundant storage"

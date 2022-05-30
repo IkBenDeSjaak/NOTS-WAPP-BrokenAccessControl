@@ -39,14 +39,18 @@ The database needs to be created seperatly from the app service.
 
 You can now create a new database or use a bacpac with data already filled out.
 
-#### New database
+#### 3a New database
+
+ > Only create a new database if you **do not** want to use a bacpac
 
 Create a new database by clicking on ``+ Create database`` and fill out the page as following:
  - **Database details**: Think of a name and for ``service and compute tier`` select Basic service tier and change max data size to 0,5 GB
 
 Go to the networking tab and make sure ``Allow Azure services and resources to access this server`` is set to ``Yes`` and wait until the database is deployed and click ``Go to resource``
 	
-#### Import bacpac
+#### 3b Import bacpac
+
+> If you've already created a database, remove it before importing the bacpac (this creates a new database)
 
 1. Search for ``Storage accounts`` and create a new storage account using "Standard performance" and "Geo redundant storage"
 2. Create a new container for the bacpac file

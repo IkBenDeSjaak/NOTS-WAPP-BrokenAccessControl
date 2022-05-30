@@ -131,6 +131,15 @@ If you **did not import a bacpac** then we need to generate the database schema 
 
 You should now be able to visit your website!
 
+## Azure cache for Redis
+
+Search for Azure cache for Redis and select create new database. Fill it out as following:
+
+1. **Project details**: select the same subscription and resource group as in previous steps
+2. **Instance details**: choose a name location and ``Basic C0`` cache type
+
+Now click on ``Show access keys`` and copy the primary connection string into your app.
+
 ### Errors
 
 Some solutions to errors that we came across:

@@ -34,7 +34,10 @@ namespace NOTS_WAPP_Demo_BrokenAccessControl.Controllers
         [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
-            //CHECK OF DE BESTELLING DIE JE OPHAALT VAN INGELOGDE PERSOON IS
+            // CHECK OF DE BESTELLING DIE JE OPHAALT VAN INGELOGDE PERSOON IS
+
+            // ORDER.CUSTOMERID == CURRENT_USER_ID
+
             if (id == null)
             {
                 return NotFound();

@@ -29,7 +29,7 @@ First you need to create an app service, where your app will be hosted.
 
 The database needs to be created seperatly from the app service.
 
-1. Search for **SQL Servers** and click on ```+ Create`` once you're on the SQL Database page
+1. Search for **SQL Servers** and click on ``+ Create`` once you're on the SQL Database page
 2. Fill out the page as following:
 	- **Project details:** Choose the same subscription and resource group as the app service
 	- **Server details:** Enter a unique name for the database server (ex ``workshop-deployment``) and select West Europe as region (if possible)

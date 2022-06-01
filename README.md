@@ -79,7 +79,7 @@ You can deploy to Azure directly from Visual Studio.
 
 #### 4b Deploy to App Service without Visual Studio
 
-First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system.
+First of all, install Azure CLI by following [these](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install) instructions. You also need git installed on your system. Rider also [has an option to publish to Azure](https://blog.jetbrains.com/dotnet/2020/03/17/publishing-applications-iis-azure-aws-using-rider/) but you'll have to figure that out yourself.
 
 1. Run this command with your app name and the resource group that the app service is in.
 
